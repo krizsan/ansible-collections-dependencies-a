@@ -1,0 +1,12 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Before
+      debug:
+        msg: "********** Before including role B"
+    - name: Test including role B from collection B in namespace B
+      include_role:
+        name: namespaceb.collectionb.roleb
+    - name: After
+      debug:
+        msg: "********** After including role B"
